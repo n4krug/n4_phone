@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap");
+
+:root {
+	font-family: "Roboto", sans-serif;
+
+	--bakgrund-1: hsl(0, 0%, 95%);
+	--bakgrund-1-trans: hsl(0, 0%, 95%, 0.4);
+	--bakgrund-2: hsl(0, 0%, 93%);
+	--bakgrund-2-50: hsl(0, 0%, 97%);
+	--bakgrund-3: #ffffff;
+	--bakgrund-4: #d8d8d8;
+
+	--text-1: #fff;
+	--text-2: #000000;
+	--text-3: #b58d76;
+
+	--accent-1: hsl(35, 100%, 60%);
+
+	--main: #101114;
+	--seconary: #21232b;
+	--seconary-50: hsla(228, 13%, 15%, 0.5);
+	--third: #5272f2;
+	--fourth: #ffffff;
+	--fifth: #d14444;
+
+	--border-radius: 0.25rem;
+
+	--element-width: 41rem;
+
+	--notification-bg: #ffffffcc;
+	--notification-color: #000;
+
+	--quick-setting-group-bg: hsla(0, 0%, 100%, 0.5);
+	--quick-setting-btn-bg-1: hsla(0, 0%, 0%, 0.5);
+	--quick-setting-btn-bg-2: hsla(0, 0%, 100%, 0.7);
+
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	font-size: 1.25vh;
+	overflow: hidden;
+	color: white;
+}
+
+.dark-mode {
+	--notification-bg: #000000cc;
+	--notification-color: #fff;
+
+	--quick-setting-group-bg: hsla(0, 0%, 0%, 0.5);
+	--quick-setting-btn-bg-1: hsla(0, 0%, 0%, 0.5);
+	--quick-setting-btn-bg-2: hsla(0, 0%, 100%, 0.7);
+}
+
+.container.hidden {
+	transform: translateY(120%);
+}
+
+.container {
+	transform: translateY(0);
+	transition-property: transform;
+	transition-duration: 200ms;
+	transition-timing-function: ease;
+}
+
+.background {
+	user-select: none;
+}
+
+#phone {
+	background-image: url("../images/phone.png");
+	height: 45rem;
+	aspect-ratio: 0.5;
+	/* background-color: hsla(228, 13%, 15%, 0.5); */
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: fixed;
+	bottom: 1rem;
+	right: 10rem;
+	transform-style: preserve-3d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.screen {
+	display: none;
+	color: white;
+}
+
+.screen.active {
+	display: flex;
+}
+
+.navbar {
+	width: calc(100% - 3.5rem);
+	margin-top: 1.75rem;
+	/* background-color: red; */
+	display: flex;
+	flex-direction: row;
+	font-weight: 700;
+	font-size: 0.75rem;
+	color: var(--fourth);
+	position: fixed;
+	top: 0;
+	z-index: 999999;
+	user-select: none;
+}
+
+.right-nav,
+.left-nav {
+	/* background-color: #5272f2; */
+	width: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.left-nav {
+	font-size: 1.15em;
+}
+
+.right-nav {
+	display: flex;
+	gap: 0.5rem;
+	margin-left: auto;
+	margin-right: 0.25rem;
+}
+
+.quick-access {
+	background-color: hsla(0, 0%, 100%, 0.336);
+	width: calc(100% - 2rem);
+	height: 5rem;
+	margin-block-start: auto;
+	margin-bottom: 1rem;
+	backdrop-filter: blur(0.25rem);
+	border-radius: 1.25rem;
+	display: flex;
+	box-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.3);
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	align-items: center;
+	justify-items: center;
+}
+
+.app {
+	/* background-color: #5272f2; */
+	width: 3.5rem;
+	cursor: pointer;
+	height: fit-content;
+}
+
+.app img {
+	width: 100%;
+	aspect-ratio: 1;
+	overflow: hidden;
+	border-radius: 0.75rem;
+	box-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.3);
+}
+
+.app p {
+	font-size: 0.65rem;
+	text-overflow: ellipsis;
+	flex-wrap: nowrap;
+	text-align: center;
+	font-weight: 400;
+	overflow-wrap: break-word;
+	margin-top: 0.25rem;
+	text-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.5);
+}
+
+.app-list {
+	margin-top: 3.5rem;
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	width: calc(100% - 0.75rem);
+	justify-items: center;
+	row-gap: 1rem;
+	/* margin-inline: 1rem; */
+}
+
+.screen {
+	background-color: black;
+	width: 90%;
+	height: 96%;
+	transform: translateZ(-10px);
+	border-radius: 2rem;
+	background-size: cover;
+	background-position: center;
+	/* display: flex; */
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}
+
+.home-btn {
+	cursor: pointer;
+	width: calc(100% - 12rem);
+	height: 0.5rem;
+	border-radius: 10rem;
+	background-color: var(--fourth);
+	position: fixed;
+	bottom: 0.75rem;
+	box-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.3);
+}
+
+.notification-container {
+	/* background-color: #b58d76; */
+	position: absolute;
+	width: auto;
+	margin-inline: 2rem;
+	top: 3.5rem;
+	/* z-index: -1; */
+	max-height: 9rem;
+	overflow: hidden;
+}
+
+.notification-container .notification {
+	background-color: var(--notification-bg);
+	border-radius: 1rem;
+	padding: 1rem 0.75rem;
+	backdrop-filter: blur(0.5rem);
+	color: var(--notification-color);
+	padding-left: 4rem;
+	cursor: pointer;
+	animation-name: notification;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	width: auto;
+	margin-bottom: 0.5rem;
+}
+
+@keyframes notification {
+	0% {
+		transform: scale(0);
+	}
+	10% {
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+.notification-icon {
+	width: 2rem;
+	position: absolute;
+	left: 1rem;
+	border-radius: 0.5rem;
+}
+
+.notification-message {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* number of lines to show */
+	line-clamp: 1;
+	-webkit-box-orient: vertical;
+	height: 1.05em;
+	overflow: hidden;
+}
+
+.notification-title {
+	/* font-size: 1.125rem; */
+	font-weight: 700;
+}
+
+#phone.message {
+	transform: translateY(37rem);
+}
+
+#call div {
+	backdrop-filter: blur(0.5rem);
+	width: 100%;
+	height: 100%;
+	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--seconary-50);
+	user-select: none;
+}
+
+#call .caller-label {
+	margin-top: 4rem;
+	font-size: 2rem;
+	font-weight: 100;
+}
+
+#call .call-info {
+	margin-top: 0.5rem;
+	font-weight: 100;
+}
+
+#call #cancel-call-btn {
+	position: absolute;
+	bottom: 7.5rem;
+	width: 2.25em;
+	height: 2.25em;
+	padding: 1rem;
+	background-color: #fc3b2e;
+	border: none;
+	outline: none;
+	border-radius: 50vh;
+	font-size: 1.75rem;
+	cursor: pointer;
+}
+
+#call #cancel-call-btn .fa-phone {
+	color: white;
+	rotate: 135deg;
+}
+#call .accept-call-btn,
+#call .dont-accept-call-btn {
+	position: absolute;
+	bottom: 7.5rem;
+	width: 2.25em;
+	height: 2.25em;
+	padding: 1rem;
+	border: none;
+	outline: none;
+	border-radius: 50vh;
+	font-size: 1.75rem;
+	cursor: pointer;
+}
+#call .dont-accept-call-btn {
+	background-color: #fc3b2e;
+	left: 4rem;
+}
+
+#call .accept-call-btn {
+	background-color: #76d672;
+	right: 4rem;
+}
+
+#call .accept-call-btn .fa-phone,
+#call .dont-accept-call-btn .fa-phone {
+	color: white;
+}
+#call .dont-accept-call-btn .fa-phone {
+	rotate: 135deg;
+}
+
+#canvas {
+	position: absolute;
+	display: none;
+	inset: 0;
+}
+
+#big-image {
+	max-width: 70vw;
+	max-height: 70vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99999999;
+}
+
+/* Quick settings */
+.quick-settings-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	/* justify-content: center; */
+	align-items: center;
+	/* backdrop-filter: blur(0.5rem); */
+	z-index: 10000;
+	border-radius: 5rem;
+	background-color: transparent;
+	padding-top: 7.5rem;
+}
+
+.quick-settings-container.active {
+	display: flex;
+}
+
+.quick-settings-container .home-btn {
+	bottom: 10rem;
+}
+
+#phone:has(.quick-settings-container.active)
+	.screen:not(.quick-settings-container) {
+	filter: blur(0.25rem);
+}
+
+.quick-settings-container .settings-group {
+	width: 10rem;
+	aspect-ratio: 1;
+	border-radius: 2.5rem;
+	background-color: var(--quick-setting-group-bg);
+	/* padding: 0.5rem; */
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	justify-items: center;
+}
+
+.quick-settings-container .settings-item {
+	border: none;
+	outline: none;
+	background-color: var(--quick-setting-btn-bg-1);
+	border-radius: 2.5rem;
+	width: 4rem;
+	aspect-ratio: 1;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.quick-settings-container .settings-item.active {
+	background-color: var(--quick-setting-btn-bg-2);
+	color: black;
+}

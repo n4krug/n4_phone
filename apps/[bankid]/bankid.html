@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[bankid]/bankid.css" />
+	</head>
+	<body>
+		<div class="bankid">
+			<div class="default-page">
+				<img
+					src="https://www.bankid.com/assets/logo-bank-id.svg"
+					alt="BankID"
+					srcset=""
+					class="bankid-logo"
+				/>
+				<p class="bankid-desc">
+					Påbörja en inloggning eller underskrift på en webbsida eller i en
+					annan app.
+				</p>
+			</div>
+
+			<div class="payment-page hidden">
+				<div class="header">
+					<i class="fa-solid fa-arrow-left" id="payment-back-btn"></i>
+					<h2 class="payment-title">IDENTIFIERING</h2>
+					<img
+						src="https://www.bankid.com/assets/logo-bank-id.svg"
+						alt="BankID"
+						srcset=""
+						class="payment-logo"
+					/>
+				</div>
+				<!-- <div class="user-info">
+                <i class="fa-solid fa-user" id="user-icon"></i>
+                <div class="user-name">Gurra Gurrason</div>
+            </div> -->
+				<div class="payment-info">
+					<i class="fa-regular fa-address-card" id="info-icon"></i>
+					<div class="info-text">
+						<p>Jag identifierar mig hos</p>
+						<p class="payment-source">Swedbank AB</p>
+					</div>
+				</div>
+				<div class="payment-accept-btn">Identifiera</div>
+			</div>
+		</div>
+
+		<script src="../apps/[bankid]/bankid.js"></script>
+	</body>
+</html>

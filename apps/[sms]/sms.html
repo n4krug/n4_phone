@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[sms]/sms.css" />
+	</head>
+	<body>
+		<div class="sms">
+			<div class="conversations-page">
+				<h2 class="conversation-title">Meddelanden</h2>
+				<i class="fa-solid fa-pen-to-square" id="new-conversation"></i>
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="conversation-search input"
+					placeholder="Sök"
+				/>
+				<div class="conversation-list">
+					<div class="conversation">
+						<p class="conversation-image">P</p>
+						<div class="conversation-column">
+							<h3 class="conversation-name">Gurra Gurrason</h3>
+							<p class="last-message">Lorem corporis.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="conversation-page">
+				<div class="conversation-header">
+					<i class="fa-solid fa-angle-left sms-back"></i>
+					<div class="conversation-info-container">
+						<p class="conversation-image">P</p>
+						<h2 class="conversation-title">Gustav Eneberg</h2>
+					</div>
+				</div>
+				<div class="sms-container">
+					<div class="sms-message sent">
+						<p class="content">Test</p>
+						<!-- <p class="time">2022-06-04 17:07</p> -->
+					</div>
+					<div class="sms-message received">
+						<p class="content">Test</p>
+						<!-- <p class="time">2022-06-04 17:07</p> -->
+					</div>
+				</div>
+				<input
+					type="text"
+					class="sms-input input"
+					id="sms-input"
+					placeholder="sms"
+				/>
+			</div>
+			<div class="new-conversation-page">
+				<div class="new-header">
+					<i class="fa-solid fa-angle-left sms-back"></i>
+					<h2 class="new-title">Nytt meddelande</h2>
+				</div>
+				<input
+					type="number"
+					class="new-sms-number input"
+					id="new-sms-number"
+					placeholder="Nummer"
+				/>
+				<i class="fa-solid fa-plus new-sms-contact" id="new-sms-contact"></i>
+				<input
+					type="text"
+					class="new-sms-input input"
+					id="new-sms-input"
+					placeholder="Meddelande"
+				/>
+			</div>
+		</div>
+
+		<div class="contacts-page overlay-page">
+			<div class="header">
+				<h2 class="contact-title">Kontakter</h2>
+				<p class="cancel-contact-btn">Avbryt</p>
+			</div>
+			<i class="fa-solid fa-magnifying-glass contacts-search-icon"></i>
+			<input
+				type="text"
+				class="contact-search input"
+				placeholder="Sök"
+				id="contact-search"
+			/>
+			<div class="contact-list">
+				<p class="contact-letter">A</p>
+				<div class="contact">
+					<h3 class="contact-name">Gurra Gurrason</h3>
+				</div>
+			</div>
+		</div>
+
+		<script src="../apps/[sms]/sms.js"></script>
+	</body>
+</html>

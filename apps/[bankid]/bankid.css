@@ -1,0 +1,137 @@
+:root {
+    --bankid-bg-1: white;
+    --bankid-bg-2: hsl(0, 0%, 90%);
+    --bankid-bg-3: hsl(209, 10%, 80%);
+
+    --bankid-color-1: black;
+    --bankid-color-2: rgb(61, 61, 61);
+
+    --bankid-accent: hsl(204, 63%, 30%);
+}
+
+.dark-mode {
+    --bankid-bg-1: #17191A;
+    --bankid-bg-2: #0D0E0E;
+    --bankid-bg-3: #202020;
+    
+    --bankid-color-1: white;
+    --bankid-color-2: rgb(230, 230, 230);
+    
+}
+
+.navbar {
+    color: var(--bankid-color-1);
+}
+
+#home-btn {
+    background-color: var(--bankid-color-2);
+}
+
+.bankid .hidden {
+    display: none;
+}
+
+.bankid {
+    position: absolute;
+    background-color: var(--bankid-bg-1);
+    color: var(--bankid-color-1);
+    width: 100%;
+    height: 100%;
+}
+
+.default-page {
+    height: 80%;
+    width: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding: 1rem;
+}
+
+.payment-page {
+    height: 100%;
+    width: 100%;
+}
+
+.payment-page > * {
+    padding-inline: 1rem;
+}
+
+.payment-page .header {
+    width: calc(100% - 2rem);
+    background-color: var(--bankid-bg-2);
+    padding-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+    align-items: center;
+    padding-bottom: .5rem;
+    font-weight: 700;
+}
+
+#payment-back-btn {
+    cursor: pointer;
+}
+
+.payment-logo {
+    height: 100%;
+    aspect-ratio: 1;
+    margin-left: auto;
+}
+
+.payment-page i {
+    color: var(--bankid-color-2);
+}
+
+.user-info {
+    display: flex;
+    padding-block: 1rem;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 300;
+}
+
+.payment-info {
+    width: calc(100% - 2rem);
+    background-color: var(--bankid-bg-3);
+    display: flex;
+    padding-block: .5rem;
+    gap: 1rem;
+}
+
+.info-text {
+    font-weight: 300;
+}
+
+.payment-source {
+    margin-top: .25rem;
+    font-weight: 700;
+}
+
+#info-icon {
+    background-color: var(--bankid-bg-2);
+    width: 2rem;
+    color: var(--bankid-accent);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bankid-accent);
+}
+
+.payment-accept-btn {
+    width: calc(100% - 4rem);
+    background-color: var(--bankid-accent);
+    color: white;
+    border-radius: .25rem;
+    margin-inline: 1rem;
+    position: absolute;
+    bottom: 3rem;
+    padding-block: .75rem;
+    text-align: center;
+    cursor: pointer;
+}

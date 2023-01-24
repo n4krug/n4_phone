@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[call]/call.css" />
+	</head>
+	<body>
+		<div class="call">
+			<div class="call-page active" id="keypad-page">
+				<input
+					type="number"
+					class="number-input input"
+					id="number-input"
+					placeholder="Nummer"
+				/>
+				<div class="numpad">
+					<button class="number-btn" value="1">1</button>
+					<button class="number-btn" value="2">2</button>
+					<button class="number-btn" value="3">3</button>
+					<button class="number-btn" value="4">4</button>
+					<button class="number-btn" value="5">5</button>
+					<button class="number-btn" value="6">6</button>
+					<button class="number-btn" value="7">7</button>
+					<button class="number-btn" value="8">8</button>
+					<button class="number-btn" value="9">9</button>
+					<button class="number-btn" value="0">0</button>
+					<button class="call-btn" id="call-btn">
+						<i class="fa-solid fa-phone"></i>
+					</button>
+				</div>
+			</div>
+			<div class="call-page" id="contacts-page">
+				<div class="header">
+					<h2 class="contact-title">Kontakter</h2>
+				</div>
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="contact-search input"
+					placeholder="Sök"
+					id="contact-search"
+				/>
+				<div class="contact-list">
+					<p class="contact-letter">A</p>
+					<div class="contact">
+						<h3 class="contact-name">Gurra Gurrason</h3>
+					</div>
+				</div>
+			</div>
+			<div class="call-nav">
+				<button class="call-nav-btn" id="call-recent-btn">
+					<i class="fa-solid fa-clock"></i>
+				</button>
+				<button class="call-nav-btn active" id="call-keypad-btn">
+					<i class="fa-solid fa-hashtag"></i>
+				</button>
+				<button class="call-nav-btn" id="call-contacts-btn">
+					<i class="fa-solid fa-user-group"></i>
+				</button>
+			</div>
+		</div>
+		<script src="../apps/[call]/call.js"></script>
+	</body>
+</html>

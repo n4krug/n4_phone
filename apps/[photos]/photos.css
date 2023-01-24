@@ -1,0 +1,40 @@
+:root {
+	--camera-bg-1: #eee;
+
+	--camera-color-1: black;
+
+	color: var(--camera-color-1);
+}
+
+.dark-mode {
+	--camera-bg-1: black;
+	--camera-color-1: white;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.navbar {
+	color: var(--camera-color-1);
+}
+
+.photos-container {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	position: relative;
+	background-color: var(--camera-bg-1);
+}
+
+.photo-list {
+	margin-top: 3rem;
+	overflow-y: scroll;
+	height: 100%;
+}
+
+.photo-list img {
+	cursor: pointer;
+	max-width: 100%;
+	margin-bottom: 1rem;
+}

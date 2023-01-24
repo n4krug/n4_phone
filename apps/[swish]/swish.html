@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[swish]/swish.css" />
+	</head>
+	<body>
+		<div class="swish-container">
+			<div class="swish-homepage">
+				<img
+					src="https://svgshare.com/i/g0K.svg"
+					alt="Swish"
+					class="swish-logo"
+				/>
+				<button class="swish-btn">Swisha</button>
+			</div>
+
+			<div class="new-swish">
+				<div class="new-swish-top-menu">
+					<button class="close-swish">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+					<h2>Swisha</h2>
+				</div>
+				<div class="swish-inputs">
+					<div class="swish-target">
+						<input
+							type="number"
+							name="swish-phone-number"
+							id="swish-phone-number"
+							placeholder="Mottagare"
+							class="swish-input input"
+						/>
+						<button class="swish-contact-btn">
+							<i class="fa-solid fa-plus"></i>
+						</button>
+					</div>
+					<input
+						type="number"
+						name="swish-amount"
+						id="swish-amount"
+						placeholder="Belopp"
+						class="swish-input input"
+					/>
+				</div>
+				<div class="swish-bottom">
+					<button class="send-swish">Swisha</button>
+				</div>
+			</div>
+
+			<div class="contacts-page overlay-page">
+				<div class="header">
+					<h2 class="contact-title">Kontakter</h2>
+					<p class="cancel-contact-btn">Avbryt</p>
+				</div>
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="contact-search input"
+					placeholder="Sök"
+					id="contact-search"
+				/>
+				<div class="contact-list">
+					<p class="contact-letter">A</p>
+					<div class="contact">
+						<h3 class="contact-name">Gurra Gurrason</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="swish-succes">
+				<div class="green-succes">
+					<i class="fa-regular fa-circle-check"></i>
+					<h2>Betalning skickad!</h2>
+				</div>
+				<div class="succes-info">
+					<div class="succes-summa">
+						<h2 id="succes-amount">384</h2>
+						<p>SEK</p>
+					</div>
+					<div class="succes-person">
+						<h2 id="succes-name">Test Testson</h2>
+					</div>
+					<div class="succes-number">
+						<h2 id="succes-phone-number">0702874546</h2>
+					</div>
+				</div>
+				<div class="succes-logo">
+					<img
+						src="https://www.swish.nu/img/swish-logotype.82ec35e3.svg"
+						alt="swish"
+						srcset=""
+					/>
+				</div>
+				<button class="close-succes">
+					<i class="fa-solid fa-xmark"></i>
+				</button>
+			</div>
+		</div>
+		<script src="../apps/[swish]/swish.js"></script>
+	</body>
+</html>

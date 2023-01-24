@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[settings]/settings.css" />
+	</head>
+	<body>
+		<div class="settings" id="settings-container">
+			<div class="header">
+				<h2>Inställningar</h2>
+			</div>
+			<div class="setting-div darkmode-div">
+				<div class="setting-title">
+					<p>Telefon Inställningar</p>
+				</div>
+				<div class="setting-row">
+					<p>Stör ej</p>
+					<label class="switch">
+						<input type="checkbox" id="dnd-switch" />
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="setting-row">
+					<p>Mörkt Läge</p>
+					<label class="switch">
+						<input type="checkbox" id="darkmode-switch" />
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="setting-row">
+					<p>Bakgrundsbild (URL)</p>
+					<input
+						type="text"
+						name="bg-url-inp"
+						id="bg-url-inp"
+						placeholder="url"
+						class="input"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<script src="../apps/[settings]/settings.js"></script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[twitter]/twitter.css" />
+	</head>
+	<body>
+		<div class="twitter-container">
+			<div class="header">
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="twitter-search input"
+					placeholder="Sök"
+					id="twitter-search"
+				/>
+			</div>
+			<div class="posts">
+				<div class="post newpost">
+					<!-- <input
+						type="text"
+						class="twitter-newpost input-outlined"
+						placeholder="Skriv inlägg"
+						id="twitter-newpost"
+					/> -->
+					<textarea
+						class="twitter-newpost input"
+						placeholder="Skriv inlägg"
+						id="twitter-newpost"
+					></textarea>
+					<button
+						class="send-btn blue-btn circle"
+						id="send-btn"
+						onclick="newPost()"
+					>
+						<i class="fa-solid fa-paper-plane"></i>
+					</button>
+				</div>
+				<div id="twitter-feed"></div>
+			</div>
+		</div>
+		<script src="../apps/[twitter]/twitter.js"></script>
+	</body>
+</html>

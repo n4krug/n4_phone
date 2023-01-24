@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[notepad]/notepad.css" />
+	</head>
+	<body>
+		<div class="notes-container">
+			<div class="notes-page" id="notes-page">
+				<h1>Notes</h1>
+				<div class="notes-search">
+					<i class="fa-solid fa-magnifying-glass search-icon"></i>
+					<input
+						type="text"
+						placeholder="Sök"
+						id="notes-search"
+						class="input"
+						oninput="SearchNotes()"
+					/>
+				</div>
+				<div class="notes-list" id="notes-list"></div>
+			</div>
+			<div class="notes-page" id="note-edit-page">
+				<div class="note-edit-header">
+					<button class="edit-back-btn" id="edit-back-btn" onclick="SaveNote()">
+						<i class="fa-solid fa-chevron-left"></i> Notes
+					</button>
+				</div>
+				<input
+					type="text"
+					name="title"
+					id="note-edit-title"
+					class="input"
+					placeholder="Titel"
+				/>
+				<textarea
+					name="content"
+					id="note-edit-content"
+					class="input"
+					placeholder="Skriv här..."
+				></textarea>
+			</div>
+		</div>
+		<script src="../apps/[notepad]/notepad.js"></script>
+	</body>
+</html>

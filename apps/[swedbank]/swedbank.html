@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[swedbank]/swedbank.css" />
+	</head>
+	<body>
+		<div class="swedbank-login">
+			<img src="./images/apps/swedbank.webp" alt="" />
+			<button class="bank-login-btn" id="bank-login-btn">Logga In</button>
+		</div>
+		<div class="swedbank">
+			<div class="bank-header">
+				<img src="./images/apps/swedbank_logo.png" alt="Swedbank" />
+			</div>
+
+			<div class="bank-page active" id="bank-homepage">
+				<div class="bank-info-element">
+					<i class="fa-solid fa-wallet"></i>
+					<h2 id="bank-cash-amount">69420</h2>
+				</div>
+				<div class="bank-info-element">
+					<i class="fa-solid fa-building-columns"></i>
+					<h2 id="bank-amount">69420</h2>
+				</div>
+				<div class="bank-info-element">
+					<div class="bank-info-list bank-transaction-list">
+						<div class="bank-transaction-element">
+							<p class="bank-transaction-description">Testing</p>
+							<p class="bank-transaction-amount">-1230</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bank-page" id="bank-accounts">
+				<div class="bank-info-element bank-accounts-element">
+					<h2 class="bank-accounts-title">Konton</h2>
+					<div class="bank-info-list bank-accounts-list">
+						<div class="bank-account-element">
+							<p class="bank-account-name">Tets asd asd ad asd asd</p>
+							<p class="bank-account-amount">1209834</p>
+						</div>
+						<div class="bank-account-element">
+							<p class="bank-account-name">Tets</p>
+							<p class="bank-account-amount">1209834</p>
+						</div>
+						<div class="bank-account-element">
+							<p class="bank-account-name">Tets</p>
+							<p class="bank-account-amount">1209834</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bank-nav">
+				<button class="bank-nav-btn active" id="bank-homepage-btn">
+					<i class="fa-solid fa-house"></i>
+				</button>
+				<button class="bank-nav-btn" id="bank-accounts-btn">
+					<i class="fa-solid fa-credit-card"></i>
+				</button>
+				<button
+					class="bank-nav-btn"
+					id="bank-transaction-btn"
+					style="display: none"
+				>
+					<i class="fa-solid fa-money-bill-transfer"></i>
+				</button>
+				<button
+					class="bank-nav-btn"
+					id="bank-invoice-btn"
+					style="display: none"
+				>
+					<i class="fa-solid fa-file-invoice"></i>
+				</button>
+			</div>
+		</div>
+
+		<script src="../apps/[swedbank]/swedbank.js"></script>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+:root {
+	--camera-bg-1: white;
+
+	--camera-color-1: black;
+
+	color: var(--camera-color-1);
+}
+
+.dark-mode {
+	--camera-bg-1: black;
+	--camera-color-1: white;
+}
+
+.camera-container {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	position: relative;
+	--control-height: 8rem;
+	/* padding: 2rem; */
+}
+
+.screen:has(.camera-container) {
+	background-color: transparent;
+}
+
+#phone:has(.camera-container) {
+	transform: translate(calc(-50vw + 50% + 10rem), calc(-50vh + 50% + 1rem))
+		rotate(0) scale(1.75);
+}
+
+#phone:has(.camera-container.landscape) {
+	transform: translate(-50rem, -20rem) rotate(-90deg) scale(2.5);
+}
+
+.camera-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4rem;
+	background-color: var(--camera-bg-1);
+}
+
+.camera-controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: var(--control-height);
+	background-color: var(--camera-bg-1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-inline: 3rem;
+}
+
+.camera-controls button {
+	cursor: pointer;
+}
+
+.camera-controls .control {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: var(--camera-color-1);
+	font-size: 1.5rem;
+}
+
+.camera-container.landscape .camera-controls .control {
+	transform: rotate(90deg);
+}
+
+.camera-shutter {
+	width: 3rem;
+	aspect-ratio: 1;
+	border: none;
+	background-color: var(--camera-color-1);
+	border-radius: 50%;
+	outline: 2px solid var(--camera-color-1);
+	outline-offset: 0.25rem;
+}
+
+.camera-screen {
+	position: absolute;
+	top: 4rem;
+	bottom: var(--control-height);
+	left: 0;
+	right: 0;
+	cursor: move;
+}
+
+.preview-photo {
+	position: absolute;
+	top: 4rem;
+	bottom: var(--control-height);
+	left: 0;
+	right: 0;
+	height: calc(100% - 4rem - var(--control-height));
+	animation: photopreview 500ms 1s ease-in-out forwards;
+}
+
+.camera-container.landscape .preview-photo {
+	rotate: 90deg;
+	width: calc(100% - 4rem - var(--control-height));
+	height: unset;
+}
+
+@keyframes photopreview {
+	0% {
+		translate: 0;
+		scale: 1;
+	}
+	100% {
+		translate: -50% 50%;
+		scale: 0;
+	}
+}
+
+.hideCursor {
+	cursor: none;
+}

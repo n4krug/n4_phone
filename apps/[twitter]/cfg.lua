@@ -1,0 +1,3 @@
+Twitter = {}
+
+Twitter.SaveBetweenSessions = true

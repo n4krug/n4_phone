@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[linkedin]/linkedin.css" />
+	</head>
+	<body>
+		<div class="linkedin-container">
+			<div class="header">
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="linkedin-search input"
+					placeholder="Sök"
+					id="linkedin-search"
+				/>
+			</div>
+			<div class="posts">
+				<div class="post newpost">
+					<input
+						type="text"
+						class="linkedin-newpost input-outlined input"
+						placeholder="Skriv inlägg"
+						id="linkedin-newpost"
+					/>
+					<button class="send-btn blue-btn" id="send-btn" onclick="newPost()">
+						<i class="fa-solid fa-paper-plane"></i>
+					</button>
+				</div>
+				<div id="linkedin-feed"></div>
+			</div>
+		</div>
+		<script src="../apps/[linkedin]/linkedin.js"></script>
+	</body>
+</html>

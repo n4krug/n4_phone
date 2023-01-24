@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../apps/[contacts]/contacts.css" />
+	</head>
+	<body>
+		<div class="contacts">
+			<div class="contacts-page">
+				<h2 class="contact-title">Kontakter</h2>
+				<i class="fa-solid fa-plus" id="new-contact"></i>
+				<i class="fa-solid fa-magnifying-glass search-icon"></i>
+				<input
+					type="text"
+					class="contact-search input"
+					placeholder="Sök"
+					id="contact-search"
+				/>
+				<div class="contact-list">
+					<p class="contact-letter">A</p>
+					<div class="contact">
+						<h3 class="contact-name">Gurra Gurrason</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="add-contact-page overlay-page">
+				<div class="header">
+					<p class="add-contact-btn" id="cancel-add-contact">Avbryt</p>
+					<h2>Ny kontakt</h2>
+					<p class="add-contact-btn" id="confirm-add-contact">Spara</p>
+				</div>
+				<div class="add-contact-inputs">
+					<input
+						type="text"
+						class="add-contact-input input"
+						placeholder="Namn"
+						id="contact-name-inp"
+						pattern="[A-Za-z\-\ \(\)\_]"
+					/>
+					<input
+						type="number"
+						class="add-contact-input input"
+						placeholder="Telefonnummer"
+						id="contact-number-inp"
+					/>
+				</div>
+			</div>
+
+			<div class="contact-info-page overlay-page">
+				<div class="header">
+					<p class="contact-info-btn" id="cancel-info-contact">Avbryt</p>
+					<h2>Kontakt</h2>
+					<p class="contact-info-btn" id="confirm-info-contact">Spara</p>
+				</div>
+				<div class="contact-info-inputs">
+					<p class="contact-info-img">P</p>
+					<input
+						type="text"
+						class="contact-info-input input"
+						placeholder="Namn"
+						id="contact-info-name-inp"
+						pattern="[A-Za-z\-\ \(\)\_]"
+					/>
+					<input
+						type="number"
+						class="contact-info-input input"
+						placeholder="Telefonnummer"
+						id="contact-info-number-inp"
+						readonly
+					/>
+					<button class="remove-contact" id="remove-contact">
+						Ta bort kontakt
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="../apps/[contacts]/contacts.js"></script>
+	</body>
+</html>

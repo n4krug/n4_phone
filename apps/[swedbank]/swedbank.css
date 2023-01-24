@@ -1,0 +1,249 @@
+:root {
+	--bank-bg-1: hsl(0, 0%, 95%);
+	--bank-bg-2: hsl(0, 0%, 93%);
+	--bank-bg-2-50: hsl(0, 0%, 97%);
+	--bank-bg-3: #ffffff;
+	--bank-bg-4: #d8d8d8;
+
+	--bank-text-1: #fff;
+	--bank-text-2: #000000;
+	--bank-text-3: #b58d76;
+
+	--bank-accent-1: hsl(35, 100%, 60%);
+
+	--bank-main: #101114;
+	--bank-seconary: #21232b;
+	--bank-seconary-50: hsla(228, 13%, 15%, 0.5);
+	--bank-third: #5272f2;
+	--bank-fourth: #ffffff;
+	--bank-fifth: #d14444;
+
+	--bank-border-radius: 0.25rem;
+}
+
+.dark-mode {
+	--bank-bg-1: hsl(0, 0%, 10%);
+	--bank-bg-2: hsl(0, 0%, 7.5%);
+	--bank-bg-2-50: hsl(0, 0%, 15%);
+	--bank-bg-3: #000;
+	--bank-bg-4: hsl(0, 0%, 15%);
+
+	--bank-text-1: #000;
+	--bank-text-2: #fff;
+	--bank-text-3: #b58d76;
+
+	--bank-accent-1: hsl(35, 100%, 45%);
+
+	--bank-main: #101114;
+	--bank-seconary: #21232b;
+	--bank-seconary-50: hsla(228, 13%, 15%, 0.5);
+	--bank-third: #5272f2;
+	--bank-fourth: #ffffff;
+	--bank-fifth: #d14444;
+}
+
+.swedbank,
+.swedbank-login {
+	background-color: var(--bank-bg-1);
+	height: 100%;
+	width: 100%;
+}
+
+.swedbank-login {
+	background-color: var(--bank-bg-3);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.swedbank-login img {
+	width: 100%;
+	margin-top: 1.9rem;
+	box-shadow: 0px 2px 0.5rem -3px rgba(0, 0, 0, 0.25);
+}
+
+.bank-login-btn {
+	box-shadow: 0px 2px 0.5rem -3px rgba(0, 0, 0, 0.25);
+	margin-top: 10rem;
+	font-weight: 300;
+	font-family: museo-sans-rounded, sans-serif;
+	border: none;
+	background-color: var(--bank-accent-1);
+	color: var(--bank-text-2);
+	font-size: 1.5rem;
+	padding: 1rem;
+	width: 10rem;
+	border-radius: 1rem;
+	box-shadow: 1px 1px 1rem hsla(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.navbar {
+	color: var(--bank-text-2);
+}
+
+#home-btn {
+	background-color: var(--bank-text-2);
+}
+
+.bank-nav {
+	position: absolute;
+	bottom: 0;
+	background-color: var(--bank-bg-3);
+	padding-bottom: 2rem;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding-top: 1rem;
+	box-shadow: 0px -2px 0.5rem -3px rgba(0, 0, 0, 0.25);
+}
+
+.bank-nav-btn {
+	background: none;
+	border: none;
+	color: var(--bank-text-2);
+	font-size: 1.5rem;
+	/* margin-block: 0.5em; */
+	float: right;
+}
+
+.bank-nav-btn.active {
+	color: var(--bank-accent-1);
+}
+
+.bank-nav-btn:hover {
+	color: var(--bank-accent-1);
+	cursor: pointer;
+}
+
+.bank-page {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+	margin-inline: 2rem;
+	width: auto;
+}
+
+.bank-page.active {
+	display: flex;
+}
+
+.bank-info-element {
+	background-color: var(--bank-bg-3);
+	color: var(--bank-text-2);
+	width: 100%;
+	padding: 1rem 1rem;
+	border-radius: var(--bank-border-radius);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	font-size: 1.5rem;
+}
+
+.bank-info-element h2 {
+	font-weight: 300;
+}
+
+.bank-header {
+	height: 3rem;
+	padding-top: 2rem;
+	background-color: var(--bank-bg-3);
+	display: flex;
+	justify-content: center;
+	box-shadow: 0px 2px 0.5rem -3px rgba(0, 0, 0, 0.25);
+}
+
+.bank-header img {
+	height: 100%;
+}
+
+.bank-transaction-list {
+	max-height: 17rem;
+}
+
+.bank-info-list {
+	overflow-y: scroll;
+	background-color: var(--bank-bg-2);
+	border-radius: var(--bank-border-radius);
+	width: 100%;
+	padding-block: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.bank-info-list::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+.bank-info-list::-webkit-scrollbar-track {
+	background-color: var(--bank-bg-1);
+	border-radius: var(--border-radius);
+}
+
+.bank-info-list::-webkit-scrollbar-thumb {
+	background-color: var(--bank-accent-1);
+	border-radius: var(--border-radius);
+}
+
+.bank-transaction-element {
+	font-size: 1rem;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+	padding-inline: 0.5rem;
+	/* width: 100%; */
+}
+
+.bank-transaction-amount {
+	margin-left: auto;
+}
+
+.bank-transaction-description {
+	max-width: 10rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* number of lines to show */
+	line-clamp: 1;
+	-webkit-box-orient: vertical;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+
+.bank-account-element {
+	font-size: 1rem;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+	padding-inline: 0.5rem;
+	/* width: 100%; */
+}
+
+.bank-account-amount {
+	margin-left: auto;
+}
+
+.bank-account-name {
+	max-width: 10rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* number of lines to show */
+	line-clamp: 1;
+	-webkit-box-orient: vertical;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+
+.bank-accounts-element {
+	flex-direction: column;
+}

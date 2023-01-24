@@ -1,0 +1,236 @@
+:root {
+	--call-bg-1: white;
+	--call-bg-2: #e9e9eb;
+
+	--call-color-1: black;
+	--call-color-1-5: #aaa;
+	--call-color-2: white;
+
+	--call-border-color-1: #ddd;
+
+	--call-accent: #1982fc;
+
+	--contacts-bg-1: white;
+	--contacts-bg-2: #e9e9eb;
+
+	--contacts-color-1: black;
+	--contacts-color-1-5: #aaa;
+	--contacts-color-2: white;
+
+	--contacts-border-color-1: #f3f3f3;
+
+	--contacts-accent: #1982fc;
+	color: var(--call-color-1);
+}
+
+.dark-mode {
+	--call-bg-1: black;
+	--call-bg-2: #262628;
+
+	--call-border-color-1: #444;
+
+	--call-color-1: white;
+	--call-color-1-5: #aaa;
+	--call-color-2: white;
+
+	--contacts-bg-1: black;
+	--contacts-bg-2: #262628;
+
+	--contacts-border-color-1: #222;
+
+	--contacts-color-1: white;
+	--contacts-color-1-5: #aaa;
+	--contacts-color-2: white;
+}
+
+.call {
+	background-color: var(--call-bg-1);
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	position: relative;
+	/* padding: 2rem; */
+}
+
+.call-page {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+	margin-inline: 2rem;
+	width: auto;
+}
+
+.call-page.active {
+	display: flex;
+}
+
+.number-input {
+	margin-top: 3rem;
+	/* margin-inline: 1rem; */
+	padding: 0.5em 1em;
+	background-color: transparent;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid var(--call-border-color-1);
+	width: calc(100% - 4rem);
+	text-align: center;
+	box-sizing: border-box;
+	color: var(--call-color-1);
+}
+
+.numpad {
+	display: grid;
+	bottom: 5.5rem;
+	grid-template-columns: repeat(3, 1fr);
+	/* margin: 2rem; */
+	position: absolute;
+	width: calc(100% - 4.5rem);
+}
+
+.numpad button {
+	border: none;
+	outline: none;
+	aspect-ratio: 1/1;
+	/* padding: 0rem; */
+	margin: 0.25rem 0.5rem;
+	border-radius: 50%;
+	background-color: var(--call-bg-2);
+	font-size: 1.75rem;
+	cursor: pointer;
+	color: var(--call-color-1);
+}
+
+.numpad [value="0"],
+.numpad .call-btn {
+	grid-column: 2;
+}
+
+.numpad .call-btn {
+	color: white;
+	background-color: #76d672;
+}
+
+.call-nav {
+	position: absolute;
+	bottom: 0;
+	background-color: var(--call-bg-1);
+	padding-bottom: 2rem;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--call-border-color-1);
+	/* box-shadow: 0px -2px 0.5rem -3px rgba(0, 0, 0, 0.25); */
+}
+
+.call-nav-btn {
+	background: none;
+	border: none;
+	color: var(--call-color-1-5);
+	font-size: 1.5rem;
+	/* margin-block: 0.5em; */
+	float: right;
+}
+
+.call-nav-btn.active {
+	color: var(--call-accent);
+}
+
+.call-nav-btn:hover {
+	color: var(--call-accent);
+	cursor: pointer;
+}
+
+.contact-title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.contact-search::placeholder {
+	color: var(--contacts-color-1-5);
+}
+
+.contact-search {
+	background: none;
+	border: none;
+	outline: none;
+	color: var(--contacts-color-1);
+	border-radius: 0.5rem;
+	background-color: var(--contacts-bg-2);
+	font-size: 1rem;
+	padding-block: 0.5rem;
+	padding-left: 2rem;
+	padding-right: 1rem;
+	margin-left: 0rem;
+	width: 15rem;
+	margin-bottom: 0.5rem;
+	font-weight: 300;
+}
+
+.search-icon {
+	position: absolute;
+	color: var(--contacts-color-1-5);
+	/* transform: translate(0.5rem, 0.5rem); */
+	left: 1.7rem;
+	top: 6.5rem;
+}
+
+.contact-list {
+	max-width: 18rem;
+	max-height: 32rem;
+	overflow-y: scroll;
+	/* overflow: visible; */
+	margin-left: 0rem;
+	width: 100%;
+}
+
+.contact {
+	cursor: pointer;
+	display: flex;
+	/* height: 3rem; */
+	/* overflow-y: hidden; */
+	align-items: center;
+	position: relative;
+	border-top: 1px solid var(--contacts-border-color-1);
+	width: 100%;
+	padding-block: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+.contact:last-child {
+	border-bottom: 1px solid var(--contacts-border-color-1);
+}
+
+.contact-letter {
+	background-color: var(--contacts-border-color-1);
+	/* transform: translateX(-2rem); */
+	color: var(--contacts-color-1);
+	padding-left: 0.5rem;
+	width: 110%;
+	position: relative;
+	padding-block: 0.25rem;
+}
+
+.contact-name {
+	/* font-size: 1.25rem; */
+	font-weight: 700;
+	color: var(--contacts-color-1);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.contacts-page .header {
+	margin-top: 3rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+}
