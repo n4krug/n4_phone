@@ -15,12 +15,13 @@ local display = false
 --     SetDisplay(true)
 -- end)
 
-RegisterNUICallback("exit", function(data)
+RegisterNUICallback("exit", function(data, cb)
     N4_PHONE.SetDisplay(false)
     Phone.PlayAnim('out')
+    cb({})
 end)
 
-RegisterNUICallback("saveSettings", function(data)
+RegisterNUICallback("saveSettings", function(data, cb)
     -- TriggerServerEvent(Script .. ':savePhoneSettings', data)
     Phone.PhoneData.Personal.Settings = data
     -- Phone.EventHandler('SavePhone', Phone)
@@ -29,6 +30,7 @@ RegisterNUICallback("saveSettings", function(data)
         Personalnumber = FWFuncs.CL.GetIdentifier(),
         Data = Phone.PhoneData
     })
+    cb({})
 end)
 
 Citizen.CreateThread(function()
@@ -113,7 +115,7 @@ end)
 RegisterNUICallback('mouseMove', function(data, cb)
     MouseControl = data.state
 
-    cb()
+    cb({})
 end)
 
 Citizen.CreateThread(function()
@@ -172,8 +174,9 @@ AddEventHandler(Script .. ':BankID', function(loginName)
     end
 end)
 
-RegisterNUICallback('setNuiFocus', function (data)
+RegisterNUICallback('setNuiFocus', function (data, cb)
     SetNuiFocusKeepInput(not data.focus)
+    cb({})
 end)
 
 function GetBlipEnabled(blip)

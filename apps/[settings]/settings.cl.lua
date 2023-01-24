@@ -16,4 +16,5 @@ RegisterNUICallback('settingChanged', function (data, cb)
     setting.cliFunc(data.value)
     SettingsCFG.Categories[data['category'] + 1].Settings[data['setting'] + 1].state = data.value
     TriggerServerEvent(Script .. ':settings:settingChanged', data)
+    cb({})
 end)

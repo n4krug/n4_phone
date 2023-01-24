@@ -50,14 +50,46 @@ function SaveNote() {
     note.title = $("#note-edit-title").val()
     note.content = $("#note-edit-content").val()
     note.editedDate = new Date().getTime()
+    
+    if (note.title == "" && note.content == "") {
+        $("#note-edit-page").removeClass('active')
+        $("#note-edit-page").removeAttr("data-id")
+        return
+    }
 
     if (note.title == "") {
         note.title = "Untitled"
     }
 
+
     var noteId = Notes.findIndex(o => o.id == note.id)
 
     noteId > -1 ? Notes[noteId] = note : Notes.push(note)
+
+    $.post(`https://${window.script}/saveNotes`, JSON.stringify(Notes)).then((data) => {
+        Notes = data
+
+        AppendNotes(data)
+
+        $("#note-edit-page").removeClass('active')
+        $("#note-edit-page").removeAttr("data-id")
+    })
+}
+
+function NewNote() {
+    $("#note-edit-page").removeAttr("data-id")
+    $("#note-edit-title").val("")
+    $("#note-edit-content").val("")
+
+    $("#note-edit-page").addClass('active')
+}
+
+function DeleteNote() {
+    var noteId = Notes.findIndex(o => o.id == $("#note-edit-page").attr("data-id"))
+
+    if (noteId > -1) {
+        Notes.splice(noteId, 1)
+    }
 
     $.post(`https://${window.script}/saveNotes`, JSON.stringify(Notes)).then((data) => {
         Notes = data

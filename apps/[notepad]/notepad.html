@@ -5,7 +5,16 @@
 	<body>
 		<div class="notes-container">
 			<div class="notes-page" id="notes-page">
-				<h1>Notes</h1>
+				<div class="notes-header">
+					<h1>Notes</h1>
+					<button
+						class="new-note-btn btn"
+						id="new-note-btn"
+						onclick="NewNote()"
+					>
+						<i class="fa-solid fa-plus"></i>
+					</button>
+				</div>
 				<div class="notes-search">
 					<i class="fa-solid fa-magnifying-glass search-icon"></i>
 					<input
@@ -22,6 +31,13 @@
 				<div class="note-edit-header">
 					<button class="edit-back-btn" id="edit-back-btn" onclick="SaveNote()">
 						<i class="fa-solid fa-chevron-left"></i> Notes
+					</button>
+					<button
+						class="edit-delete-btn btn"
+						id="edit-delete-btn"
+						onclick="DeleteNote()"
+					>
+						<i class="fa-solid fa-trash"></i>
 					</button>
 				</div>
 				<input

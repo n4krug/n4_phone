@@ -260,6 +260,7 @@ RegisterNUICallback('quicksettingToggled', function (data, cb)
 		Flash = data.state
 		Phone.PlayAnim(data.state and 'photo' or 'text')
 	end
+    cb({})
 end)
 
 Citizen.CreateThread(function()

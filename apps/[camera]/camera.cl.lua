@@ -23,7 +23,7 @@ RegisterNUICallback('camApp', function (data, cb)
         camOpen = false
     end
     Phone.PlayAnim(data.open and 'photo' or 'text')
-    cb()
+    cb({})
 end)
 
 local speed_ud = 0.2
@@ -61,7 +61,7 @@ end)
 
 RegisterNUICallback('selfieCam', function (data, cb)
     CellFrontCamActivate(data.selfie)
-    cb()
+    cb({})
 end)
 
 function CellFrontCamActivate(activate)
@@ -79,6 +79,7 @@ RegisterNUICallback('camCapture', function (data, cb)
             rect = data
         })
     end)
+    cb({})
 end)
 
 RegisterNUICallback('imgCropped', function (data, cb)

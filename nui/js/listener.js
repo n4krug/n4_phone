@@ -347,8 +347,8 @@ function ShowQuickSettings(state) {
     } else if (state == 'toggle') {
         $('.quick-settings-container').toggleClass('active')
     }
-    console.log(window.settings.darkmode)
-    console.log(window.settings.darkmode == 1 || false)
+    // console.log(window.settings.darkmode)
+    // console.log(window.settings.darkmode == 1 || false)
     $('#quick-dnd i').toggleClass('fa-bell-slash', window.settings.do_not_disturb == 1 || false).toggleClass('fa-bell', !(window.settings.do_not_disturb == 1 || false))
     $('#quick-dnd').toggleClass('active', window.settings.do_not_disturb == 1 || false)
     $('#quick-darkmode i').toggleClass('fa-moon', window.settings.darkmode == 1 || false).toggleClass('fa-sun', !(window.settings.darkmode == 1 || false))

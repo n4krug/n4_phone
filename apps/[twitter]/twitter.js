@@ -26,7 +26,7 @@ function deletePost(id) {
 
 function LikePost(id) {
     $.post(`https://${window.script}/likeTwitterPost`, JSON.stringify({id: id})).then((data) => {
-        console.log(data);
+        // console.log(data);
         $(`.post#${id} .twitter-like-count`).html(data.likes);
         $(`.post#${id} .twitter-like-btn i`).removeClass("fa-solid fa-regular").addClass(`fa-${data.liked ? "solid" : "regular"}`);
     });
@@ -69,10 +69,6 @@ function addPostToFeed(post) {
     }).on('mouseup', function(){
         $('#big-image').attr('src', "")
     })
-}
-
-function callNumber(number) {
-    console.log(number);
 }
 
 function formatPhoneNumber(phoneNumberString) {

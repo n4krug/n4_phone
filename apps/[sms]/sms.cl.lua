@@ -46,11 +46,11 @@ RegisterNUICallback('smsNumberToIdentifier', function(data, cb)
     end, data)
 end)
 
-RegisterCommand('testSMS', function()
-    ESX.TriggerServerCallback('n4_sms:send_text', function()
+-- RegisterCommand('testSMS', function()
+--     ESX.TriggerServerCallback('n4_sms:send_text', function()
 
-    end, {
-        targetNumber = '769111938',
-        message = 'testing'
-    })
-end)
+--     end, {
+--         targetNumber = '769111938',
+--         message = 'testing'
+--     })
+-- end)
