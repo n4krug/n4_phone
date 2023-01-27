@@ -6,9 +6,13 @@ author "n4kruG"
 
 lua54 'yes'
 
+Framework = 'QB' -- FWFuncs file to use, QB, ESX or Custom
+
 escrow_ignore {
     'config.lua',
-    'framework_functions.lua',
+    'FWFuncs.Custom.lua',
+    'FWFuncs.QB.lua',
+    'FWFuncs.ESX.lua',
     'apps/**/cfg.lua'
 }
 
@@ -37,7 +41,6 @@ server_script {
 
 shared_scripts {
     'config.lua',
-    'framework_functions.lua',
     'apps/**/cfg.lua',
     '@es_extended/imports.lua',
 }
@@ -59,8 +62,21 @@ files {
 }
 
 dependencies {
-	'es_extended',
     'screenshot-basic',
     'n4_sounds',
     'pma-voice'
 }
+
+if Framework == 'QB' then
+    shared_script 'FWFuncs.QB.lua'
+
+elseif Framework == 'ESX' then
+    shared_script 'FWFuncs.ESX.lua'
+    dependencies {
+        'es_extended'
+    }
+elseif Framework == 'Custom' then
+    shared_script 'FWFuncs.Custom.lua'
+else
+    print('No framework specified in fxmanifest.lua')
+end
