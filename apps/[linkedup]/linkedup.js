@@ -1,8 +1,8 @@
 let Posts = []
 
 function newPost() {
-    const text = $("#linkedin-newpost").val();
-    $("#linkedin-newpost").val("");
+    const text = $("#linkedup-newpost").val();
+    $("#linkedup-newpost").val("");
     if (text == "" || text == null) {
         return;
     }
@@ -12,14 +12,14 @@ function newPost() {
         id: Math.floor(Math.random() * 1000000000),
     }
 
-    $.post(`https://${window.script}/addLinkedInPost`, JSON.stringify(post)).then((data) => {
+    $.post(`https://${window.script}/addLinkedUpPost`, JSON.stringify(post)).then((data) => {
         addPostToFeed(data);
         Posts.push(data);
     });
 }
 
 function deletePost(id) {
-    $.post(`https://${window.script}/deleteLinkedInPost`, JSON.stringify({id: id})).then(() => {
+    $.post(`https://${window.script}/deleteLinkedUpPost`, JSON.stringify({id: id})).then(() => {
         $(`.post#${id}`).remove();
     });
 }
@@ -27,22 +27,22 @@ function deletePost(id) {
 function addPostToFeed(post) {
     const postEl = $(`
         <div class="post" data-personalnumber="${post.personalnumber}" id="${post.id}">
-            ${post.personalnumber == window.personalnumber ? `<button class="linkedin-post-delete blue-btn" onclick="deletePost(${post.id})">
+            ${post.personalnumber == window.personalnumber ? `<button class="linkedup-post-delete blue-btn" onclick="deletePost(${post.id})">
                 <i class="fa-solid fa-trash"></i>
             </button>` : ""}
-            <p class="linkedin-post-title">
+            <p class="linkedup-post-title">
                 ${post.name}
             </p>
-            <p class="linkedin-post-text">
+            <p class="linkedup-post-text">
                 ${post.text}
             </p>
-            <button class="linkedin-post-call blue-btn x-btn-pad" onclick="CopyText(${post.number})">
+            <button class="linkedup-post-call blue-btn x-btn-pad" onclick="CopyText('${post.number}')">
             <i class="fa-solid fa-clipboard"></i>   ${formatPhoneNumber(post.number)}
             </button>
         </div>
     `);
 
-    $("#linkedin-feed").prepend(postEl);
+    $("#linkedup-feed").prepend(postEl);
 }
 
 function formatPhoneNumber(phoneNumberString) {
@@ -55,7 +55,7 @@ function formatPhoneNumber(phoneNumberString) {
 }
 
 function searchPosts(searchString) {
-    $("#linkedin-feed").html("");
+    $("#linkedup-feed").html("");
     for (const post of Posts) {
         if (post.text.toLowerCase().includes(searchString.toLowerCase()) || post.name.toLowerCase().includes(searchString.toLowerCase())) {
             addPostToFeed(post);
@@ -64,6 +64,7 @@ function searchPosts(searchString) {
 }
 
 function CopyText(coords) {
+    console.log(coords)
     var text = document.createElement('textarea');
     text.value = coords;
     text.setAttribute('readonly', '');
@@ -75,18 +76,18 @@ function CopyText(coords) {
 }
 
 $(function () {
-    $("#linkedin-newpost-btn").on("click", newPost);
-    $("#linkedin-newpost").on("keyup", function (e) {
+    $("#linkedup-newpost-btn").on("click", newPost);
+    $("#linkedup-newpost").on("keyup", function (e) {
         if (e.key == "Enter") {
             newPost();
         }
     });
 
-    $("#linkedin-search").on("keyup", function (e) {
-        searchPosts($("#linkedin-search").val());
+    $("#linkedup-search").on("keyup", function (e) {
+        searchPosts($("#linkedup-search").val());
     });
 
-    $.post(`https://${window.script}/getLinkedInPosts`, JSON.stringify({})).then((data) => {
+    $.post(`https://${window.script}/getLinkedUpPosts`, JSON.stringify({})).then((data) => {
         Posts = [...data];
         for (const post of data) {
             addPostToFeed(post);

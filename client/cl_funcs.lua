@@ -56,7 +56,7 @@ Phone.PlayRingtone = function(Ringtone)
         Phone.StopRingtone()
     end
 
-    Phone.RingtoneTest = exports['n4_sounds']:PlaySound({
+    Phone.RingtoneTest = exports['n4_utils']:PlaySound({
         Name = ('ringtonetest-%s'):format(GetPlayerServerId(PlayerId())),
         SoundFile = Ringtone,
         Player = GetPlayerServerId(PlayerId()),

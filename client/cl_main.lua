@@ -3,31 +3,14 @@ Alarms = {}
 Script = GetCurrentResourceName()
 
 Citizen.CreateThread(function()
+	Citizen.Wait(1000)
 
-	ESX.TriggerServerCallback(Script .. ':GetPhone', function(Response, GlobalData, Calls)
+	TriggerServerCallback(Script .. ':GetPhone', function(Response, GlobalData, Calls)
 		Phone.PhoneData = Response;
 		Phone.GlobalData = GlobalData;
 		Phone.Calls = Calls
 	end, FWFuncs.CL.GetIdentifier())
 end)
-
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(Data)
-
-	ESX.PlayerData = Data;
-
-	ESX.TriggerServerCallback(Script .. ':GetPhone', function(Response, GlobalData, Calls)
-		Phone.PhoneData = Response;
-		Phone.GlobalData = GlobalData;
-		Phone.Calls = Calls
-	end, FWFuncs.CL.GetIdentifier())
-end)
-
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-	ESX.PlayerData['job'] = job
-end)
-
 
 RegisterNetEvent('closeallui')
 AddEventHandler('closeallui', function()
@@ -70,7 +53,7 @@ AddEventHandler(Script .. ':EventHandler', function(Event, Data)
 	if (Event == 'CreateCall') then
 		if (Data.Number == Phone.PhoneData['Personal'].Phonenumber) then
 			if (FWFuncs.CL.HasItem(Config.Item)) and not Phone.PhoneData['Settings']['do_not_disturb'] then
-				Phone.Ringtone = exports['n4_sounds']:PlaySound({
+				Phone.Ringtone = exports['n4_utils']:PlaySound({
 					Name = ('ringtone-%s'):format(GetPlayerServerId(PlayerId())),
 					SoundFile = Phone.PhoneData['Settings']['ringtone'] and Config.Ringtones[Phone.PhoneData['Settings']['ringtone']] or
 						'opening',
@@ -90,10 +73,10 @@ AddEventHandler(Script .. ':EventHandler', function(Event, Data)
 						Data = Data
 					})
 				else
-					ESX.ShowNotification('Du har ett inkommande samtal.', {
-						icon = 'smartphone',
-						color = '#0cc6bf'
-					});
+					-- ESX.ShowNotification('Du har ett inkommande samtal.', {
+					-- 	icon = 'smartphone',
+					-- 	color = '#0cc6bf'
+					-- });
 
 					Phone.Incomingcall = Data
 				end
@@ -109,7 +92,7 @@ AddEventHandler(Script .. ':EventHandler', function(Event, Data)
 
 			-- exports['pma-voice']:SetCallChannel(Data.Caller)
 
-			Phone.CallSound = exports['n4_sounds']:PlaySound({
+			Phone.CallSound = exports['n4_utils']:PlaySound({
 				Name = 'calling',
 				SoundFile = 'calling',
 				Source = GetPlayerServerId(PlayerId()),

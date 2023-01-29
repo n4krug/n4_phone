@@ -13,12 +13,16 @@ escrow_ignore {
     'FWFuncs.Custom.lua',
     'FWFuncs.QB.lua',
     'FWFuncs.ESX.lua',
-    'apps/**/cfg.lua'
+    'apps/**/cfg.lua',
+    'apps/**/cfg.QB.lua',
+    'apps/**/cfg.ESX.lua',
+    'apps/**/cfg.Custom.lua',
 }
 
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 client_script {
+    '@n4_utils/cl_callbacks.lua',
     'client/cl_main.lua',
     'client/cl_funcs.lua',
     'client/cl_events.lua',
@@ -31,9 +35,9 @@ client_script {
 }
 
 server_script {
+    '@n4_utils/sv_callbacks.lua',
     'server/sv_main.lua',
     'server/sv_funcs.lua',
-    '@mysql-async/lib/MySQL.lua',
     'server/n4_server/sv_main.lua',
     'server/n4_server/sv_notifications.lua',
     'apps/**/*.sv.lua',
@@ -42,7 +46,6 @@ server_script {
 shared_scripts {
     'config.lua',
     'apps/**/cfg.lua',
-    '@es_extended/imports.lua',
 }
 
 ui_page 'nui/ui.html'
@@ -63,20 +66,29 @@ files {
 
 dependencies {
     'screenshot-basic',
-    'n4_sounds',
-    'pma-voice'
+    'n4_utils',
+    'pma-voice',
 }
 
 if Framework == 'QB' then
-    shared_script 'FWFuncs.QB.lua'
-
+    shared_scripts {
+        'FWFuncs.QB.lua',
+        'apps/**/cfg.QB.lua',
+    }
 elseif Framework == 'ESX' then
-    shared_script 'FWFuncs.ESX.lua'
+    shared_scripts {
+        'FWFuncs.ESX.lua',
+        'apps/**/cfg.ESX.lua',
+        '@es_extended/imports.lua',
+    }
     dependencies {
         'es_extended'
     }
 elseif Framework == 'Custom' then
-    shared_script 'FWFuncs.Custom.lua'
+    shared_scripts {
+        'FWFuncs.Custom.lua',
+        'apps/**/cfg.Custom.lua',
+    }
 else
     print('No framework specified in fxmanifest.lua')
 end

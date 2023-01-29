@@ -1,0 +1,3 @@
+LinkedUp = {}
+
+LinkedUp.SaveBetweenSessions = false

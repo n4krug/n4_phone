@@ -1,0 +1,22 @@
+RegisterNUICallback('addChirpPost', function (data, cb)
+    TriggerServerCallback('varp_phone:chirp:addPost', function(svData)
+        cb(svData)
+    end, data)
+end)
+
+RegisterNUICallback('deleteChirpPost', function (data, cb)
+    TriggerServerEvent('varp_phone:chirp:removePost', data)
+    cb({})
+end)
+
+RegisterNUICallback('getChirpPosts', function (data, cb)
+    TriggerServerCallback('varp_phone:chirp:getPosts', function (posts)
+        cb(posts)
+    end)
+end)
+
+RegisterNUICallback('likeChirpPost', function (data, cb)
+    TriggerServerCallback('varp_phone:chirp:likePost', function(svData)
+        cb(svData)
+    end, data)
+end)

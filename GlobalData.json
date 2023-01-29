@@ -1,0 +1,16 @@
+{
+	"Conversations": [
+		{
+			"ConversationId": "e9bf42bd-ee5f-49f5-87f1-20822a789765",
+			"Numbers": ["0743666261", "132"],
+			"Messages": [
+				{
+					"From": "0743666261",
+					"Timestamp": 1674991955980,
+					"Text": "test",
+					"ReadBy": ["0743666261"]
+				}
+			]
+		}
+	]
+}

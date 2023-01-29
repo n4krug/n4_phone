@@ -1,6 +1,6 @@
 Script = GetCurrentResourceName()
 
-ESX.RegisterServerCallback('n4_sms:create_conversation', function(source, cb, data)
+RegisterServerCallback('n4_sms:create_conversation', function(source, cb, data)
     cb(CreateConversation(source, data))
 end)
 
@@ -30,7 +30,7 @@ function CreateConversation(source, data)
     return conversationId
 end
 
-ESX.RegisterServerCallback('n4_sms:get_conversations', function(source, cb)
+RegisterServerCallback('n4_sms:get_conversations', function(source, cb)
     if not Phone.GlobalData['Conversations'] then Phone.GlobalData['Conversations'] = {} end
 
     local conversations = {}
@@ -51,7 +51,7 @@ function Set(list)
     return set
 end
 
-ESX.RegisterServerCallback('n4_sms:find_convo', function(cb, numbers)
+RegisterServerCallback('n4_sms:find_convo', function(cb, numbers)
     cb(FindConvo(numbers))
 end)
 
@@ -93,10 +93,10 @@ SMS.SendText = function(source, data)
 
     SaveResourceFile(Script, 'GlobalData.json', json.encode(Phone.GlobalData), -1)
 
-    ESX.TriggerServerCallback(Script .. ':getPlayerFromPhone', source, data.message.From, function(fromPlayer)
+    TriggerServerCallback(Script .. ':getPlayerFromPhone', source, data.message.From, function(fromPlayer)
         for i = 1, #cbData.Numbers do
             if cbData.Numbers[i] ~= data.message.From then
-                ESX.TriggerServerCallback(Script .. ':getPlayerFromPhone', source, cbData.Numbers[i],
+                TriggerServerCallback(Script .. ':getPlayerFromPhone', source, cbData.Numbers[i],
                     function(player)
                         local name = data.message.From
                         if fromPlayer and fromPlayer.name then
@@ -118,11 +118,11 @@ SMS.SendText = function(source, data)
     return cbData.Messages
 end
 
-ESX.RegisterServerCallback('n4_sms:send_text', function(source, cb, data)
+RegisterServerCallback('n4_sms:send_text', function(source, cb, data)
     cb(SMS.SendText(source, data))
 end)
 
-ESX.RegisterServerCallback('n4_sms:markRead', function(source, cb, data)
+RegisterServerCallback('n4_sms:markRead', function(source, cb, data)
     if not Phone.GlobalData['Conversations'] then Phone.GlobalData['Conversations'] = {} end
 
     for i = 1, #Phone.GlobalData['Conversations'] do

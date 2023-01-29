@@ -5,7 +5,7 @@ AddEventHandler(Script .. ':createCall', function(data)
     local Data = data
     if (Data.Number == Phone.PhoneData['Personal'].Phonenumber) then
         if (FWFuncs.CL.HasItem(Config.Item)) and Phone.PhoneData.Personal['Settings']['do_not_disturb'] == 0 then
-            Phone.Ringtone = exports['n4_sounds']:PlaySound({
+            Phone.Ringtone = exports['n4_utils']:PlaySound({
                 Name = ('ringtone-%s'):format(GetPlayerServerId(PlayerId())),
                 SoundFile = Phone.PhoneData.Personal['Settings']['ringtone'] and
                     Config.Ringtones[Phone.PhoneData.Personal['Settings']['ringtone']] or
@@ -54,7 +54,7 @@ AddEventHandler(Script .. ':createCall', function(data)
 
         -- exports['pma-voice']:SetCallChannel(Data.Caller)
 
-        Phone.CallSound = exports['n4_sounds']:PlaySound({
+        Phone.CallSound = exports['n4_utils']:PlaySound({
             Name = 'calling',
             SoundFile = 'calling',
             Source = GetPlayerServerId(PlayerId()),

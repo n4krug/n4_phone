@@ -83,7 +83,7 @@ RegisterNUICallback('camCapture', function (data, cb)
 end)
 
 RegisterNUICallback('imgCropped', function (data, cb)
-    ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
+    TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
         if not phoneData.Photos then phoneData.Photos = {} end
         table.insert(phoneData.Photos, {
             Url = data.imgUrl,

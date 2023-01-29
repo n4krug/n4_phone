@@ -7,25 +7,28 @@ FWFuncs = {
         end,
 
         GetIdentifier = function(source) -- Get the identifier of a player
-            return QBCore.Functions.GetIdentifier(source)
+            return QBCore.Functions.GetPlayer(source).PlayerData.citizenid
         end,
 
         IDFromIdentifier = function (identifier) -- Get the ID of a player from their identifier
-            local xPlayers = ESX.GetExtendedPlayers()
-            for k, v in pairs(xPlayers) do
-                if v.identifier == identifier then
-                    return k
-                end
-            end
-            return false
+            return QBCore.Functions.GetPlayerByCitizenId(identifier).source
         end,
 
         PlayerFromIdentifier = function(identifier)
             return QBCore.Functions.GetPlayerByCitizenId(identifier)
         end,
+
         PlayerFromId = function(source)
             return QBCore.Functions.GetPlayer(source)
-        end
+        end,
+
+        GetPlayers = function()
+            return QBCore.Functions.GetPlayers()
+        end,
+
+        GetName = function(source) -- expects result in format {first = "Firstname", last = "Lastname"}
+            return {first = QBCore.Functions.GetPlayer(source).PlayerData.charinfo.firstname, last = QBCore.Functions.GetPlayer(source).PlayerData.charinfo.lastname}
+        end,
     },
 
     CL = { -- Client Functions
@@ -34,7 +37,15 @@ FWFuncs = {
         end,
 
         HasItem = function(item) -- Check if the player has an item
-            QBCore.Functions.HasItem(item)
+            return QBCore.Functions.HasItem(item)
         end,
+
+        HasJob = function(job) -- Check if the player has a job
+            return QBCore.Functions.GetPlayerData().job.name == job
+        end,
+
+        GetJob = function()
+            return QBCore.Functions.GetPlayerData().job.name
+        end
     }
 }

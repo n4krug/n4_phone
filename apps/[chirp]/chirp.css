@@ -1,56 +1,56 @@
 :root {
-	--twitter-bg-1: white;
-	--twitter-bg-2: #f3f2ef;
-	--twitter-bg-3: #eff3f8;
+	--chirp-bg-1: white;
+	--chirp-bg-2: #f3f2ef;
+	--chirp-bg-3: #eff3f8;
 
-	--twitter-border-1: rgba(0, 0, 0, 0.08);
+	--chirp-border-1: rgba(0, 0, 0, 0.08);
 
-	--twitter-color-1: black;
-	--twitter-color-2: rgba(0, 0, 0, 0.6);
+	--chirp-color-1: black;
+	--chirp-color-2: rgba(0, 0, 0, 0.6);
 
-	--border-radius-big: 0rem;
+	--border-radius-big: 0.75rem;
 	--border-radius-med: 0.5rem;
-	--border-radius-sma: 0rem;
+	--border-radius-sma: 0.25rem;
 
 	--accent-color-1: #0a66c2;
 	--accent-color-2: #c20a38;
 
-	--border: 1px solid var(--twitter-border-1);
+	--border: 1px solid var(--chirp-border-1);
 
-	color: var(--twitter-color-1);
+	color: var(--chirp-color-1);
 }
 
 .dark-mode {
-	--twitter-bg-1: black;
-	--twitter-bg-2: #141414;
-	--twitter-bg-3: #191a1a;
+	--chirp-bg-1: black;
+	--chirp-bg-2: #141414;
+	--chirp-bg-3: #191a1a;
 
-	--twitter-border-1: rgba(255, 255, 255, 0.4);
+	--chirp-border-1: rgba(255, 255, 255, 0.4);
 
-	--twitter-color-1: white;
-	--twitter-color-2: rgba(255, 255, 255, 0.6);
+	--chirp-color-1: white;
+	--chirp-color-2: rgba(255, 255, 255, 0.6);
 }
 
-.twitter-container {
+.chirp-container {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
 	position: relative;
 	--control-height: 8rem;
 	/* padding: 2rem; */
-	background-color: var(--twitter-bg-2);
+	background-color: var(--chirp-bg-2);
 }
 
 .navbar {
-	color: var(--twitter-color-1);
+	color: var(--chirp-color-1);
 }
 
 #home-btn {
-	background-color: var(--twitter-color-1);
+	background-color: var(--chirp-color-1);
 }
 
-.twitter-container .header {
-	background-color: var(--twitter-bg-1);
+.chirp-container .header {
+	background-color: var(--chirp-bg-1);
 	position: absolute;
 	inset: 0;
 	bottom: unset;
@@ -63,41 +63,41 @@
 	border-bottom: var(--border);
 }
 
-.twitter-container .twitter-search {
-	background-color: var(--twitter-bg-3);
-	color: var(--twitter-color-1);
+.chirp-container .chirp-search {
+	background-color: var(--chirp-bg-3);
+	color: var(--chirp-color-1);
 	border-radius: var(--border-radius-sma);
 	border: none;
 	padding-left: 2.25rem;
 	width: 100%;
 }
 
-.twitter-container .search-icon {
+.chirp-container .search-icon {
 	position: absolute;
 	left: 2.75rem;
-	color: var(--twitter-color-2);
+	color: var(--chirp-color-2);
 	font-size: 0.9rem;
 }
 
-.twitter-container input {
+.chirp-container input {
 	padding: 0.5rem;
 	outline: none;
 }
 
-.twitter-container button {
+.chirp-container button {
 	outline: none;
 	cursor: pointer;
 }
 
-.twitter-container .input-outlined {
-	background-color: var(--twitter-bg-3);
-	color: var(--twitter-color-1);
+.chirp-container .input-outlined {
+	background-color: var(--chirp-bg-3);
+	color: var(--chirp-color-1);
 	border-radius: var(--border-radius-med);
 	border: var(--border);
 	width: 100%;
 }
 
-.twitter-container .blue-btn {
+.chirp-container .blue-btn {
 	background-color: var(--accent-color-1);
 	border-radius: 100rem;
 	color: white;
@@ -109,15 +109,15 @@
 	padding-block: 0.5rem;
 }
 
-.twitter-container .circle {
+.chirp-container .circle {
 	aspect-ratio: 1;
 }
 
-/* .twitter-container .x-btn-pad {
+/* .chirp-container .x-btn-pad {
 } */
 
-.twitter-container ::placeholder {
-	color: var(--twitter-color-2);
+.chirp-container ::placeholder {
+	color: var(--chirp-color-2);
 }
 
 ::-webkit-scrollbar {
@@ -133,7 +133,7 @@
 	/* padding-inline: 1rem; */
 }
 
-#twitter-feed {
+#chirp-feed {
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -142,11 +142,11 @@
 
 .post {
 	width: 100%;
-	background-color: var(--twitter-bg-1);
+	background-color: var(--chirp-bg-1);
 	padding: 1rem 1.5rem;
 	box-sizing: border-box;
-	border-radius: var(--border-radius-big);
-	/* border: 1px solid var(--twitter-border-1); */
+	/* border-radius: var(--border-radius-big); */
+	/* border: 1px solid var(--chirp-border-1); */
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
@@ -167,21 +167,21 @@
 }
 
 .post p {
-	color: var(--twitter-color-1);
+	color: var(--chirp-color-1);
 	/* text-align: center; */
 }
 
-.twitter-post-title {
+.chirp-post-title {
 	font-size: 1.25rem;
 	font-weight: 600;
 }
 
-.twitter-post-text {
+.chirp-post-text {
 	font-size: 1rem;
 	text-align: left;
 }
 
-.twitter-container .post .twitter-post-delete {
+.chirp-container .post .chirp-post-delete {
 	font-size: 0.75rem;
 	background-color: var(--accent-color-2);
 	position: absolute;
@@ -189,20 +189,20 @@
 	right: 0.5rem;
 }
 
-.twitter-container img {
+.chirp-container img {
 	max-width: 100%;
 	border-radius: var(--border-radius-med);
 	max-height: 20rem;
 	margin-top: 0.5rem;
 }
 
-.twitter-newpost {
+.chirp-newpost {
 	width: 100%;
 	height: 5rem;
 	background-color: transparent;
 	padding: 1rem;
 	box-sizing: border-box;
-	border-radius: var(--border-radius-big);
+	/* border-radius: var(--border-radius-big); */
 	border: none;
 	display: flex;
 	flex-direction: column;
@@ -210,27 +210,27 @@
 	position: relative;
 	resize: none;
 	outline: none;
-	color: var(--twitter-color-1);
+	color: var(--chirp-color-1);
 }
 
-.twitter-post-header {
+.chirp-post-header {
 	display: flex;
 	flex-direction: row;
 	gap: 0.2rem;
 	align-items: center;
 }
 
-.twitter-post-name {
+.chirp-post-name {
 	font-size: 1rem;
 	font-weight: 600;
 }
 
-.twitter-post-username {
+.chirp-post-username {
 	font-size: 0.75rem;
-	color: var(--twitter-color-2);
+	color: var(--chirp-color-2);
 }
 
-.twitter-post-footer {
+.chirp-post-footer {
 	display: flex;
 	flex-direction: row;
 	/* gap: 0.5rem; */
@@ -239,9 +239,9 @@
 	width: 100%;
 }
 
-.twitter-action-btn {
+.chirp-action-btn {
 	font-size: 1rem;
-	color: var(--twitter-color-2);
+	color: var(--chirp-color-2);
 	background-color: transparent;
 	border: none;
 	outline: none;
@@ -250,10 +250,10 @@
 	gap: 0.25rem;
 }
 
-.twitter-like-btn:has(.fa-heart.fa-solid) {
+.chirp-like-btn:has(.fa-heart.fa-solid) {
 	color: var(--accent-color-2);
 }
 
-.twitter-action-btn p {
+.chirp-action-btn p {
 	color: inherit;
 }

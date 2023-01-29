@@ -1,19 +1,9 @@
 Script = GetCurrentResourceName()
-local PlayerData = {}
 PhoneData = nil
-
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-    PlayerData = xPlayer
-end)
 
 
 -- * Main Script * --
 local display = false
-
--- RegisterCommand('phone', function ()
---     SetDisplay(true)
--- end)
 
 RegisterNUICallback("exit", function(data, cb)
     N4_PHONE.SetDisplay(false)
@@ -58,19 +48,15 @@ N4_PHONE.SetDisplay = function(bool)
     Phone.IsOpened = bool
     display = bool
 
-    ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData, globalData)
+    TriggerServerCallback(Script .. ':GetPhone', function(phoneData, globalData)
         PhoneData = phoneData
 
         local apps = {}
 
         for _, app in ipairs(Config.Apps) do
             if app.job ~= nil then
-                for _, job in ipairs(app.job) do
-
-                    if ESX.GetPlayerData().job[job] or (job == 'any') then
-                        apps[#apps + 1] = app
-                        break
-                    end
+                if FWFuncs.CL.HasJob(app.job) then
+                    apps[#apps + 1] = app
                 end
             else
                 apps[#apps + 1] = app
@@ -91,7 +77,7 @@ N4_PHONE.SetDisplay = function(bool)
             userNumber = phoneData.Personal.Phonenumber,
             personalnumber = FWFuncs.CL.GetIdentifier(),
             sms = globalData['Conversations'] or {},
-            job = ESX.PlayerData.job
+            job = FWFuncs.CL.GetJob(),
         })
     end, FWFuncs.CL.GetIdentifier())
     
@@ -143,14 +129,14 @@ AddEventHandler(Script .. ':BankID', function(loginName)
     if not IsPlayerDead(PlayerId()) and not Phone.IsOpened and Phone.PhoneData then
 		if (FWFuncs.CL.HasItem(Config.Item)) then
 
-            ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
+            TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
                 PhoneData = phoneData
 
                 local apps = deepCopy(Config.Apps)
 
                 if Config.JobApps then
                     for k, v in ipairs(Config.JobApps) do
-                        if ESX.GetPlayerData().job[v.job] then
+                        if FWFuncs.CL.HasJob(v.job) then
                             apps[#apps + 1] = v
                         end
                     end

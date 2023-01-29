@@ -1,0 +1,16 @@
+RegisterNUICallback('addLinkedUpPost', function (data, cb)
+    TriggerServerCallback('varp_phone:linkedup:addPost', function(svData)
+        cb(svData)
+    end, data)
+end)
+
+RegisterNUICallback('deleteLinkedUpPost', function (data, cb)
+    TriggerServerEvent('varp_phone:linkedup:removePost', data)
+    cb({})
+end)
+
+RegisterNUICallback('getLinkedUpPosts', function (data, cb)
+    TriggerServerCallback('varp_phone:linkedup:getPosts', function (posts)
+        cb(posts)
+    end)
+end)

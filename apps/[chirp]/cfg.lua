@@ -1,0 +1,3 @@
+Chirp = {}
+
+Chirp.SaveBetweenSessions = true

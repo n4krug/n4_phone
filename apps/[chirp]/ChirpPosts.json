@@ -1,0 +1,10 @@
+[
+	{
+		"name": "N4 Krug",
+		"personalnumber": "CZW95378",
+		"username": "n4.krug",
+		"text": "test",
+		"likedBy": { "CZW95378": true },
+		"id": 875246968
+	}
+]

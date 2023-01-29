@@ -1,5 +1,5 @@
 Swish = {}
-
+print(Framework)
 Swish.Funcs = {
     SV = {
         RemoveBankMoney = function(identifier, amount)

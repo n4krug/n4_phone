@@ -41,7 +41,7 @@ end)
 
 
 function CheckOnline(phone)
-    local players = ESX.GetPlayers()
+    local players = FWFuncs.SV.GetPlayers()
 
     local phones = {}
 

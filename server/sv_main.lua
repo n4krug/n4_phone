@@ -2,7 +2,7 @@ Phone = {};
 
 Script = GetCurrentResourceName()
 
-ESX.RegisterServerCallback(Script .. ':GetPhone', function(Source, Callback, Personalnumber)
+RegisterServerCallback(Script .. ':GetPhone', function(Source, Callback, Personalnumber)
 	while not Phone.Phones do
 		Phone.Phones = json.decode(LoadResourceFile(Script, 'Phones.json') or "{}");
 
@@ -53,6 +53,7 @@ ESX.RegisterServerCallback(Script .. ':GetPhone', function(Source, Callback, Per
 
 		Citizen.Wait(100)
 	end
+	SaveResourceFile(Script, 'Phones.json', json.encode(Phone.Phones), -1)
 
 	Callback(Phone.Phones[Personalnumber], Phone.GlobalData, Phone.Calls or {})
 end)
@@ -68,12 +69,7 @@ AddEventHandler(Script .. ':EventHandler', function(Event, Data)
 	TriggerClientEvent(Script .. ':EventHandler', -1, Event, Data);
 end)
 
-RegisterServerEvent('phone:sendtodiscord')
-AddEventHandler('phone:sendtodiscord', function(Data)
-	SendDiscordMessage(Data.Image, "**" .. Data.Profile.Name .. ":** " .. Data.Comments[1].Text)
-end)
-
-ESX.RegisterServerCallback(Script .. ':getPlayerFromPhone', function (source, Phonenumber, cb)
+RegisterServerCallback(Script .. ':getPlayerFromPhone', function (source, Phonenumber, cb)
 	for personalnumber, data in pairs(Phone.Phones) do
 		if data.Personal.Phonenumber == Phonenumber then
 			local xPlayer = FWFuncs.SV.PlayerFromIdentifier(personalnumber)
@@ -85,26 +81,3 @@ ESX.RegisterServerCallback(Script .. ':getPlayerFromPhone', function (source, Ph
 		end
 	end
 end)
-
-function SendDiscordMessage(message, textdiscord)
-	local embeds = {
-		{
-			type = "rich",
-			color = 3447003,
-			description = textdiscord,
-			image = {
-				name = IdKort,
-				url = message,
-				icon_url = message
-			},
-			footer = {
-				text = os.date("%d") ..
-					"/" .. os.date("%m") .. "/" .. os.date("%Y") .. " - " .. os.date("%H") .. ":" .. os.date("%M")
-			}
-		}
-	}
-
-	PerformHttpRequest(Config.DiscordWebhook, function(err, text, headers) end,
-		"POST", json.encode({ username = "Instagram", embeds = embeds }),
-		{ ["Content-Type"] = "application/json" })
-end

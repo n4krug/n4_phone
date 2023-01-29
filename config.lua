@@ -1,10 +1,8 @@
 Config = {};
 
-Config.DefaultButton = 'F1' -- Default button to open the phone rebinding is possible for the player in settings
+Config.DefaultButton = 'M' -- Default button to open the phone rebinding is possible for the player in game settings
 
 Config.Item = 'phone' -- Item name that is required to open the phone
-
-Config.DiscordWebhook = "https://discord.com/api/webhooks/..."
 
 Config.Apps = { -- Add apps here (file = name of the folder, label = name of the app shown in the phone). Numbering sets the order on homescreen
 	[1] = {
@@ -24,12 +22,12 @@ Config.Apps = { -- Add apps here (file = name of the folder, label = name of the
 		['label'] = 'Notes'
 	},
 	[5] = {
-		['file'] = 'linkedin',
-		['label'] = 'LinkedIn'
+		['file'] = 'linkedup',
+		['label'] = 'LinkedUp'
 	},
 	[6] = {
-		['file'] = 'twitter',
-		['label'] = 'Twitter'
+		['file'] = 'chirp',
+		['label'] = 'Chirp'
 	},
 	[7] = {
 		['file'] = 'swish',

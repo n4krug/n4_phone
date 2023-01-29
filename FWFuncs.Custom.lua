@@ -12,12 +12,21 @@ FWFuncs = {
             return nil
         end,
 
-        PlayerFromIdentifier = function(identifier)
+        PlayerFromIdentifier = function(identifier) -- Get the player object from their identifier
             return nil
         end,
-        PlayerFromId = function(source)
+
+        PlayerFromId = function(source) -- Get the player object from their ID
             return nil
-        end
+        end,
+
+        GetPlayers = function() -- Get all players
+            return nil
+        end,
+
+        GetName = function(source) -- expects result in format {first = "Firstname", last = "Lastname"}
+            return nil
+        end,
     },
 
     CL = { -- Client Functions
@@ -28,6 +37,14 @@ FWFuncs = {
         HasItem = function(item) -- Check if the player has an item
             return nil
         end,
+
+        HasJob = function(job) -- Check if the player has a job
+            return nil
+        end,
+
+        GetJob = function() -- Get the job of the player
+            return nil
+        end
     }
 }
 

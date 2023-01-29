@@ -25,9 +25,20 @@ FWFuncs = {
         PlayerFromIdentifier = function(identifier)
             return ESX.GetPlayerFromIdentifier(identifier)
         end,
+
         PlayerFromId = function(source)
             return ESX.GetPlayerFromId(source)
-        end
+        end,
+
+        GetPlayers = function()
+            return ESX.GetPlayers()
+        end,
+
+        GetName = function(source) -- expects result in format {first = "Firstname", last = "Lastname"}
+            local name = split(ESX.GetPlayerFromId(source).getName(), " ")
+
+            return {first = name[1], last = name[2] or ""}
+        end,
     },
 
     CL = { -- Client Functions
@@ -44,5 +55,24 @@ FWFuncs = {
             end
             return false
         end,
+
+        HasJob = function(job) -- Check if the player has a job
+            return ESX.PlayerData.job.name == job
+        end,
+
+        GetJob = function()
+            return ESX.PlayerData.job.name
+        end
     }
 }
+
+function split (inputstr, sep)
+    if sep == nil then
+            sep = "%s"
+    end
+    local t={}
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+            table.insert(t, str)
+    end
+    return t
+end

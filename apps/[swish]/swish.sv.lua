@@ -1,7 +1,7 @@
-ESX.RegisterServerCallback('va_swish:swishSend', function(source, cb, data)
+RegisterServerCallback('va_swish:swishSend', function(source, cb, data)
     local sourceAmount = Swish.Funcs.SV.GetBankMoney(FWFuncs.SV.GetIdentifier(source))
     local amount = tonumber(data.amount)
-    ESX.TriggerServerCallback(Script .. ':getPlayerFromPhone', source, data.number, function(player)
+    TriggerServerCallback(Script .. ':getPlayerFromPhone', source, data.number, function(player)
         if player then
 
             if amount == nil or amount <= 0 or amount > sourceAmount then

@@ -1,6 +1,6 @@
 
 RegisterNUICallback('swishSend', function (data, cb)
-    ESX.TriggerServerCallback('va_swish:swishSend', function (args)
+    TriggerServerCallback('va_swish:swishSend', function (args)
         cb(args)
     end, data)
 end)

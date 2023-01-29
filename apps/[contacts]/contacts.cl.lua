@@ -6,7 +6,7 @@ RegisterNUICallback('addContact', function(data, cb)
     -- TriggerServerEvent(Script .. ':addContact', data.name, data.phoneNumber)
     -- Citizen.Wait(100)
     -- Phone.Phones[]
-    ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
+    TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
         table.insert(phoneData.Contacts, {
             Name = data.name,
             Number = data.phoneNumber
@@ -23,7 +23,7 @@ end)
 
 RegisterNUICallback('editContact', function(data, cb)
 
-    ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
+    TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
         for i, v in ipairs(phoneData.Contacts) do
             if v.Number == data.number then
                 phoneData.Contacts[i].Name = data.name
@@ -40,7 +40,7 @@ end)
 
 RegisterNUICallback('delContact', function(data, cb)
 
-    ESX.TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
+    TriggerServerCallback(Script .. ':GetPhone', function(phoneData)
         for i, v in ipairs(phoneData.Contacts) do
             if v.Number == data.number then
                 table.remove(phoneData.Contacts, i)

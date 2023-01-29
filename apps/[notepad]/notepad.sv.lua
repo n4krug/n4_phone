@@ -1,6 +1,6 @@
 Script = GetCurrentResourceName()
 
-ESX.RegisterServerCallback(Script .. ':getNotes', function (source, cb)
+RegisterServerCallback(Script .. ':getNotes', function (source, cb)
     local allNotes = json.decode(LoadResourceFile(Script, 'apps/[notepad]/Notes.json') or '{}')
     -- print(dump(allNotes))
 
@@ -12,7 +12,7 @@ ESX.RegisterServerCallback(Script .. ':getNotes', function (source, cb)
     cb(notes)
 end)
 
-ESX.RegisterServerCallback(Script .. ':saveNotes', function (source, cb, data)
+RegisterServerCallback(Script .. ':saveNotes', function (source, cb, data)
     -- print(dump(data))
     local allNotes = json.decode(LoadResourceFile(Script, 'Notes.json') or '{}')
 
